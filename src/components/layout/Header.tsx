@@ -47,12 +47,12 @@ export const Header: React.FC = () => {
         <nav
           className={`w-full transition-all duration-300 ${
             isScrolled
-              ? 'bg-[#F8F5EF]/95 backdrop-blur-md shadow-subtle border-b border-[#D8CBB9]/60 py-2.5 sm:py-3'
-              : 'bg-[#F8F5EF] border-b border-[#EDE7DC] py-3 sm:py-3.5'
+              ? 'bg-[#F8F5EF]/95 backdrop-blur-md shadow-subtle border-b border-[#D8CBB9]/60 py-2 sm:py-2.5'
+              : 'bg-[#F8F5EF] border-b border-[#EDE7DC] py-2.5 sm:py-3'
           }`}
         >
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-2 sm:gap-4">
-            {/* Left: Brand Logo & Tagline */}
+            {/* Left: Brand Logo */}
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               {/* Mobile menu trigger */}
               <button
@@ -72,7 +72,11 @@ export const Header: React.FC = () => {
                 <img
                   src="/assets/logo.png"
                   alt="B7 HOMES"
-                  className="h-10 w-10 sm:h-12 sm:w-12 xl:h-13 xl:w-13 object-contain rounded-full transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"
+                  className={`object-contain rounded-full transition-all duration-300 group-hover:scale-105 drop-shadow-sm ${
+                    isScrolled
+                      ? 'h-12 w-12 sm:h-14 sm:w-14 xl:h-16 xl:w-16'
+                      : 'h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 xl:h-20 xl:w-20'
+                  }`}
                 />
               </a>
             </div>
