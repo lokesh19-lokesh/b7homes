@@ -38,3 +38,4 @@ export const faqs: FAQItem[] = [
     answer: 'Every piece of B7 Homes furniture is backed by our comprehensive 3-Year Structural Warranty covering timber integrity, frame joinery, and manufacturing defects. Our hydraulic storage beds feature heavy-duty German gas-lift mechanisms with a 5-year replacement guarantee. Our customer support team in Tellapur is always reachable via phone and WhatsApp at +91 79895 94733.'
   }
 ];
+

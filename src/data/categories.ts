@@ -52,3 +52,4 @@ export const categories: Category[] = [
     popularItems: ['Artisan Rugs', 'Velvet Cushions', 'Warm Accent Lights', 'Throws']
   }
 ];
+
