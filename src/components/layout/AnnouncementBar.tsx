@@ -3,46 +3,38 @@ import { Sparkles, Phone, MapPin, Shield } from 'lucide-react';
 
 export const AnnouncementBar: React.FC = () => {
   return (
-    <div className="bg-[#252523] text-[#EDE7DC] text-[11px] sm:text-xs py-2 px-4 border-b border-[#35271F] font-sans">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Left Highlight */}
-        <div className="hidden lg:flex items-center gap-4 text-[#D8CBB9]">
+    <div className="bg-[#252523] text-[#EDE7DC] text-[11px] py-2 px-4 sm:px-6 lg:px-8 border-b border-[#35271F] font-sans">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-4">
+        {/* Left Highlight (visible on wide screens) */}
+        <div className="hidden xl:flex items-center gap-3 text-[#D8CBB9] whitespace-nowrap shrink-0">
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-[#A8875B]" />
-            Tellapur Factory Workshop, Hyderabad
+            <MapPin className="w-3 h-3 text-[#A8875B]" />
+            Tellapur Workshop, Hyderabad
           </span>
           <span className="text-[#5A5A55]">|</span>
           <span className="flex items-center gap-1.5">
-            <Shield className="w-3.5 h-3.5 text-[#A8875B]" />
-            3-Year Structural Warranty
+            <Shield className="w-3 h-3 text-[#A8875B]" />
+            3-Year Warranty
           </span>
         </div>
 
-        {/* Mobile Highlight */}
-        <div className="sm:hidden flex-1 flex items-center justify-center gap-1.5 text-center text-[10px] font-medium tracking-wide">
-          <Sparkles className="w-3 h-3 text-[#A8875B] shrink-0" />
-          <span>Bespoke Furniture</span>
-          <span className="text-[#5A5A55]">•</span>
-          <span className="text-[#A8875B] font-semibold">Free Hyderabad Setup</span>
-        </div>
-
-        {/* Desktop Highlights */}
-        <div className="hidden sm:flex flex-1 items-center justify-center gap-3 sm:gap-6 text-center font-medium tracking-wide text-xs">
-          <span className="flex items-center gap-1.5">
+        {/* Center Highlights: Clean, single line, no wrapping */}
+        <div className="flex-1 flex items-center justify-center gap-3 sm:gap-4 text-center font-medium tracking-wide whitespace-nowrap overflow-hidden text-[11px]">
+          <span className="flex items-center gap-1.5 shrink-0">
             <Sparkles className="w-3 h-3 text-[#A8875B]" />
             <span>Bespoke Furniture</span>
           </span>
           <span className="text-[#5A5A55]">•</span>
-          <span>Made to Order</span>
+          <span className="shrink-0">Made to Order</span>
+          <span className="text-[#5A5A55] hidden sm:inline">•</span>
+          <span className="hidden sm:inline shrink-0">Premium Craftsmanship</span>
           <span className="text-[#5A5A55]">•</span>
-          <span>Premium Craftsmanship</span>
-          <span className="text-[#5A5A55]">•</span>
-          <span className="text-[#A8875B] font-semibold">Hyderabad Free White-Glove Delivery</span>
+          <span className="text-[#A8875B] font-semibold shrink-0">Hyderabad Free White-Glove Setup</span>
         </div>
 
         {/* Right Phone Call */}
-        <div className="hidden md:flex items-center gap-2 text-[#D8CBB9] shrink-0">
-          <Phone className="w-3.5 h-3.5 text-[#A8875B]" />
+        <div className="hidden lg:flex items-center gap-2 text-[#D8CBB9] whitespace-nowrap shrink-0">
+          <Phone className="w-3 h-3 text-[#A8875B]" />
           <a
             href="tel:+917989594733"
             className="hover:text-white transition-colors tracking-wider font-mono text-[11px]"
@@ -54,4 +46,3 @@ export const AnnouncementBar: React.FC = () => {
     </div>
   );
 };
-
