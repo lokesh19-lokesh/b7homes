@@ -63,22 +63,17 @@ export const Header: React.FC = () => {
                 <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
-              <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-                <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#D8CBB9] group-hover:border-[#A8875B] transition-colors shadow-subtle bg-white p-0.5 shrink-0 flex items-center justify-center">
-                  <img
-                    src="/assets/logo_cropped.png"
-                    alt="B7 Homes Logo"
-                    className="w-full h-full object-contain rounded-full"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-lg sm:text-xl xl:text-2xl font-bold tracking-widest text-[#252523] leading-none whitespace-nowrap">
-                    B7 HOMES
-                  </span>
-                  <span className="text-[8px] sm:text-[9px] uppercase tracking-widest text-[#A8875B] font-semibold mt-1 block whitespace-nowrap">
-                    Bespoke Carpentry
-                  </span>
-                </div>
+              <a
+                href="#"
+                className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A8875B] rounded-full"
+                aria-label="B7 HOMES — Hyderabad's Finest Bespoke Carpentry"
+                title="B7 HOMES"
+              >
+                <img
+                  src="/assets/logo.png"
+                  alt="B7 HOMES"
+                  className="h-10 w-10 sm:h-12 sm:w-12 xl:h-13 xl:w-13 object-contain rounded-full transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"
+                />
               </a>
             </div>
 
@@ -215,10 +210,10 @@ export const Header: React.FC = () => {
                 )}
               </button>
 
-              {/* Desktop CTA: Book Visit (visible on extra wide screens 1400px+ to ensure zero cramping on laptops) */}
+              {/* Desktop CTA: Book Visit */}
               <button
                 onClick={() => setIsBookingOpen(true)}
-                className="hidden 2xl:flex items-center gap-1.5 bg-[#49362B] hover:bg-[#35271F] text-white text-[11px] font-semibold uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 shadow-sm ml-2 whitespace-nowrap shrink-0 active:scale-95"
+                className="hidden xl:flex items-center gap-1.5 bg-[#49362B] hover:bg-[#35271F] text-white text-[11px] font-semibold uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 shadow-sm ml-2 whitespace-nowrap shrink-0 active:scale-95"
               >
                 <Sparkles className="w-3 h-3 text-[#D8CBB9] shrink-0" />
                 <span>Book Visit</span>
