@@ -35,11 +35,15 @@ export const Header: React.FC = () => {
     { label: 'Bedroom', id: 'Bedroom' },
     { label: 'Dining Room', id: 'Dining Room' },
     { label: 'Storage', id: 'Storage' },
+    { label: 'Furnishings', id: 'Furnishings' },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full transition-all duration-300">
+      <header
+        className="sticky top-0 z-40 w-full transition-all duration-300"
+        onMouseLeave={() => setActiveMegaCategory(null)}
+      >
         {/* Announcement Bar */}
         <AnnouncementBar />
 
@@ -53,7 +57,10 @@ export const Header: React.FC = () => {
         >
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-2 sm:gap-4">
             {/* Left: Brand Logo */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <div
+              className="flex items-center gap-2 sm:gap-3 shrink-0"
+              onMouseEnter={() => setActiveMegaCategory(null)}
+            >
               {/* Mobile menu trigger */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
@@ -97,20 +104,18 @@ export const Header: React.FC = () => {
                     }`}
                   >
                     <span>{label}</span>
-                    <ChevronDown className="w-3 h-3 text-[#7A7A73] transition-transform duration-200 group-hover:rotate-180 shrink-0" />
+                    <ChevronDown
+                      className={`w-3 h-3 text-[#7A7A73] transition-transform duration-200 shrink-0 ${
+                        activeMegaCategory === id ? 'rotate-180 text-[#A8875B]' : ''
+                      }`}
+                    />
                   </a>
                 </div>
               ))}
 
               <a
-                href="#collections"
-                className="text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#252523] hover:text-[#A8875B] whitespace-nowrap transition-colors py-2"
-              >
-                Furnishings
-              </a>
-
-              <a
                 href="#craftsmanship"
+                onMouseEnter={() => setActiveMegaCategory(null)}
                 className="text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#252523] hover:text-[#A8875B] whitespace-nowrap transition-colors py-2"
               >
                 Craftsmanship
@@ -118,6 +123,7 @@ export const Header: React.FC = () => {
 
               <a
                 href="#sofa-clinic"
+                onMouseEnter={() => setActiveMegaCategory(null)}
                 className="text-[11px] xl:text-xs font-semibold uppercase tracking-wider text-[#A8875B] hover:text-[#49362B] whitespace-nowrap transition-colors py-2 inline-flex items-center gap-1"
               >
                 <span>Sofa Clinic</span>
@@ -125,7 +131,10 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Right: Actions (Search, Account, Wishlist, Bag, Consultation) */}
-            <div className="flex items-center gap-1 sm:gap-2 xl:gap-3 shrink-0">
+            <div
+              className="flex items-center gap-1 sm:gap-2 xl:gap-3 shrink-0"
+              onMouseEnter={() => setActiveMegaCategory(null)}
+            >
               {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(true)}
