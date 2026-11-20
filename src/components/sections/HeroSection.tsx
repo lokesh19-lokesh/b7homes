@@ -202,14 +202,13 @@ export const HeroSection: React.FC = () => {
                   <img
                     src={slide.image}
                     alt={slide.imageAlt}
-                    className={`w-full h-full object-cover object-center filter brightness-[0.70] sm:brightness-[0.76] contrast-[1.05] transition-transform duration-[7000ms] ease-out ${
+                    className={`w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.03] transition-transform duration-[7000ms] ease-out ${
                       isActive ? 'scale-105' : 'scale-100'
                     }`}
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
-                  {/* High-Contrast Mobile Dark Overlays: ensures 100% crystal-clear text readability over all slide photos */}
-                  <div className="sm:hidden absolute inset-0 bg-[#1D1D1B]/70" />
-                  <div className="sm:hidden absolute inset-0 bg-gradient-to-b from-[#1D1D1B]/90 via-[#1D1D1B]/60 to-[#1D1D1B]/95" />
+                  {/* Mobile Contrast Overlays: Photo remains clearly visible and vibrant while keeping text readable */}
+                  <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-[#1A1A18]/95 via-[#1A1A18]/45 to-black/25 pointer-events-none" />
 
                   {/* Desktop Editorial Gradients: darker on left for clear typography contrast, warm ambience across base */}
                   <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#252523]/95 via-[#252523]/75 to-transparent lg:w-3/4" />
@@ -228,7 +227,7 @@ export const HeroSection: React.FC = () => {
                 className="flex items-center gap-2 sm:gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-500"
               >
                 <span className="w-5 sm:w-8 h-[1.5px] bg-[#C5A26B]" />
-                <p className="text-[11px] sm:text-xs font-semibold tracking-wider sm:tracking-widest uppercase text-[#EADFCB] flex items-center gap-1.5 sm:gap-2 drop-shadow-xs">
+                <p className="text-[11px] sm:text-xs font-semibold tracking-wider sm:tracking-widest uppercase text-[#F2ECE3] flex items-center gap-1.5 sm:gap-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]">
                   <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A26B] shrink-0" />
                   <span>{active.eyebrow}</span>
                 </p>
@@ -237,7 +236,7 @@ export const HeroSection: React.FC = () => {
               {/* Large Editorial Headline */}
               <h1
                 key={`headline-${currentSlide}`}
-                className="font-serif text-[28px] xs:text-[32px] sm:text-5xl lg:text-6xl xl:text-6.5xl font-normal sm:font-light text-[#FFFFFF] tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] animate-in fade-in slide-in-from-bottom-3 duration-500"
+                className="font-serif text-[28px] xs:text-[32px] sm:text-5xl lg:text-6xl xl:text-6.5xl font-normal sm:font-light text-[#FFFFFF] tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] animate-in fade-in slide-in-from-bottom-3 duration-500"
               >
                 {active.headlinePrefix}{' '}
                 <span className="italic font-normal text-[#F4EBE1]">
@@ -249,7 +248,7 @@ export const HeroSection: React.FC = () => {
               {/* Editorial Description with enhanced readability */}
               <p
                 key={`desc-${currentSlide}`}
-                className="text-[13px] xs:text-[14px] sm:text-base text-[#F0EBE1] font-normal sm:font-light leading-relaxed max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)] animate-in fade-in slide-in-from-bottom-4 duration-500"
+                className="text-[13px] xs:text-[14px] sm:text-base text-[#F0EBE1] font-normal sm:font-light leading-relaxed max-w-xl drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
                 {active.description}
               </p>
