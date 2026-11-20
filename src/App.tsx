@@ -23,6 +23,7 @@ import { WishlistDrawer } from './components/modals/WishlistDrawer';
 import { ArticleModal } from './components/modals/ArticleModal';
 import { ToastContainer } from './components/ui/Toast';
 import { BackToTop } from './components/ui/BackToTop';
+import { FloatingWhatsApp } from './components/ui/FloatingWhatsApp';
 
 const MainContent: React.FC = () => {
   const { isBookingOpen, setIsBookingOpen } = useShop();
@@ -98,6 +99,7 @@ const MainContent: React.FC = () => {
       <ArticleModal />
       <ToastContainer />
       <BackToTop />
+      <FloatingWhatsApp />
     </div>
   );
 };
