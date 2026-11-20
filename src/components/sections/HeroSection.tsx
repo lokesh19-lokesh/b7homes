@@ -166,10 +166,10 @@ export const HeroSection: React.FC = () => {
       aria-label="B7 Homes Featured Collections Slider"
       className="w-full bg-[#F8F5EF] pt-3 sm:pt-5 pb-6 sm:pb-10 select-none"
     >
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
+      <div className="max-w-[1440px] min-[1366px]:max-w-[97%] 2xl:max-w-[1720px] 3xl:max-w-[1840px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 min-[1366px]:px-5 2xl:px-8">
         {/* Sculptural Framed Rounded Hero Banner (Matching the reference banner shape) */}
         <div
-          className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden border border-[#D8CBB9]/80 shadow-[0_20px_50px_-10px_rgba(37,37,35,0.22)] bg-[#252523] flex flex-col justify-between min-h-[540px] sm:min-h-[580px] lg:h-[620px] xl:h-[660px]"
+          className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden border border-[#D8CBB9]/80 shadow-[0_20px_50px_-10px_rgba(37,37,35,0.22)] bg-[#252523] flex flex-col justify-between min-h-[540px] sm:min-h-[580px] lg:h-[620px] xl:h-[660px] 2xl:h-[690px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
