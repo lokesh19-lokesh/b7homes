@@ -82,7 +82,7 @@ const slides: HeroSlide[] = [
   },
 ];
 
-const SLIDE_DURATION = 6500; // 6.5 seconds per slide
+const SLIDE_DURATION = 4000; // 4 seconds per slide
 
 export const HeroSection: React.FC = () => {
   const { setIsBookingOpen } = useShop();
@@ -202,7 +202,7 @@ export const HeroSection: React.FC = () => {
                   <img
                     src={slide.image}
                     alt={slide.imageAlt}
-                    className={`w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.03] transition-transform duration-[7000ms] ease-out ${
+                    className={`w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.03] transition-transform duration-[4500ms] ease-out ${
                       isActive ? 'scale-105' : 'scale-100'
                     }`}
                     loading={index === 0 ? 'eager' : 'lazy'}
