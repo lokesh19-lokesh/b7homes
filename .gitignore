@@ -38,7 +38,7 @@ dist-ssr
 *.png
 *.jpeg
 *.jpg
-!assets/*
-!public/assets/*
+!assets/**
+!public/**
 /tmp/
 .temp/
