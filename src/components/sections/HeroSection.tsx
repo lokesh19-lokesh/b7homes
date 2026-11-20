@@ -169,7 +169,7 @@ export const HeroSection: React.FC = () => {
       <div className="max-w-[1440px] min-[1366px]:max-w-[97%] 2xl:max-w-[1720px] 3xl:max-w-[1840px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 min-[1366px]:px-5 2xl:px-8">
         {/* Sculptural Framed Rounded Hero Banner (Matching the reference banner shape) */}
         <div
-          className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden border border-[#D8CBB9]/80 shadow-[0_20px_50px_-10px_rgba(37,37,35,0.22)] bg-[#252523] flex flex-col justify-between min-h-[540px] sm:min-h-[580px] lg:h-[620px] xl:h-[660px] 2xl:h-[690px]"
+          className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden border border-[#D8CBB9]/80 shadow-[0_20px_50px_-10px_rgba(37,37,35,0.22)] bg-[#252523] flex flex-col justify-between min-h-[640px] xs:min-h-[670px] sm:min-h-[580px] lg:h-[620px] xl:h-[660px] 2xl:h-[690px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
@@ -177,15 +177,15 @@ export const HeroSection: React.FC = () => {
           onTouchEnd={handleTouchEnd}
         >
           {/* Top Integrated Campaign Ribbon Bar */}
-          <div className="relative z-20 w-full bg-[#A8875B] text-white py-2 sm:py-2.5 px-4 text-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest flex items-center justify-center gap-2 shadow-xs">
-            <span>HYDERABAD'S FINEST BESPOKE CARPENTRY · SOLID HARDWOODS</span>
+          <div
+            onClick={() => setIsBookingOpen(true)}
+            className="relative z-20 w-full bg-[#A8875B] hover:bg-[#97784D] text-white py-2 sm:py-2.5 px-3 sm:px-4 text-center text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-widest flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs cursor-pointer transition-colors"
+          >
+            <span className="truncate">HYDERABAD'S FINEST BESPOKE CARPENTRY · SOLID HARDWOODS</span>
             <span className="hidden sm:inline text-white/60">|</span>
-            <button
-              onClick={() => setIsBookingOpen(true)}
-              className="hidden sm:inline-flex items-center gap-1 hover:underline text-[#F8F5EF]"
-            >
-              <span>BOOK A FREE HOME DESIGN VISIT &rarr;</span>
-            </button>
+            <span className="hidden sm:inline-flex items-center gap-1 underline underline-offset-2 text-[#F8F5EF]">
+              BOOK A FREE HOME DESIGN VISIT &rarr;
+            </span>
           </div>
 
           {/* Background Slides with Crossfade and Subtle Ken Burns Zoom */}
@@ -202,30 +202,34 @@ export const HeroSection: React.FC = () => {
                   <img
                     src={slide.image}
                     alt={slide.imageAlt}
-                    className={`w-full h-full object-cover object-center filter brightness-[0.76] contrast-[1.04] transition-transform duration-[7000ms] ease-out ${
+                    className={`w-full h-full object-cover object-center filter brightness-[0.70] sm:brightness-[0.76] contrast-[1.05] transition-transform duration-[7000ms] ease-out ${
                       isActive ? 'scale-105' : 'scale-100'
                     }`}
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
-                  {/* Editorial Gradients: darker on left for clear typography contrast, warm ambience across base */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#252523]/95 via-[#252523]/75 to-transparent lg:w-3/4" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#252523] via-transparent to-black/35" />
+                  {/* High-Contrast Mobile Dark Overlays: ensures 100% crystal-clear text readability over all slide photos */}
+                  <div className="sm:hidden absolute inset-0 bg-[#1D1D1B]/70" />
+                  <div className="sm:hidden absolute inset-0 bg-gradient-to-b from-[#1D1D1B]/90 via-[#1D1D1B]/60 to-[#1D1D1B]/95" />
+
+                  {/* Desktop Editorial Gradients: darker on left for clear typography contrast, warm ambience across base */}
+                  <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#252523]/95 via-[#252523]/75 to-transparent lg:w-3/4" />
+                  <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#252523] via-transparent to-black/35" />
                 </div>
               );
             })}
           </div>
 
           {/* Hero Content Container */}
-          <div className="relative z-10 px-6 sm:px-10 lg:px-14 xl:px-16 pt-8 sm:pt-12 lg:pt-14 pb-12 w-full flex-1 flex flex-col justify-center">
+          <div className="relative z-10 px-5 xs:px-6 sm:px-10 lg:px-14 xl:px-16 pt-7 xs:pt-8 sm:pt-12 lg:pt-14 pb-6 sm:pb-10 w-full flex-1 flex flex-col justify-center">
             <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl space-y-3.5 sm:space-y-5">
               {/* Eyebrow & Category Index */}
               <div
                 key={`eyebrow-${currentSlide}`}
-                className="flex items-center gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-500"
+                className="flex items-center gap-2 sm:gap-2.5 animate-in fade-in slide-in-from-bottom-2 duration-500"
               >
-                <span className="w-5 sm:w-8 h-[1px] bg-[#A8875B]" />
-                <p className="text-[10px] sm:text-xs font-semibold tracking-wider sm:tracking-widest uppercase text-[#D8CBB9] flex items-center gap-1.5 sm:gap-2">
-                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#A8875B] shrink-0" />
+                <span className="w-5 sm:w-8 h-[1.5px] bg-[#C5A26B]" />
+                <p className="text-[11px] sm:text-xs font-semibold tracking-wider sm:tracking-widest uppercase text-[#EADFCB] flex items-center gap-1.5 sm:gap-2 drop-shadow-xs">
+                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#C5A26B] shrink-0" />
                   <span>{active.eyebrow}</span>
                 </p>
               </div>
@@ -233,19 +237,19 @@ export const HeroSection: React.FC = () => {
               {/* Large Editorial Headline */}
               <h1
                 key={`headline-${currentSlide}`}
-                className="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-6.5xl font-light text-[#FFFFFF] tracking-tight leading-[1.12] animate-in fade-in slide-in-from-bottom-3 duration-500"
+                className="font-serif text-[28px] xs:text-[32px] sm:text-5xl lg:text-6xl xl:text-6.5xl font-normal sm:font-light text-[#FFFFFF] tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] animate-in fade-in slide-in-from-bottom-3 duration-500"
               >
                 {active.headlinePrefix}{' '}
-                <span className="italic font-normal text-[#EDE7DC]">
+                <span className="italic font-normal text-[#F4EBE1]">
                   {active.headlineAccent}
                 </span>
                 {active.headlineSuffix && ` ${active.headlineSuffix}`}
               </h1>
 
-              {/* Editorial Description */}
+              {/* Editorial Description with enhanced readability */}
               <p
                 key={`desc-${currentSlide}`}
-                className="text-xs sm:text-base text-[#D8CBB9] font-light leading-relaxed max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-500"
+                className="text-[13px] xs:text-[14px] sm:text-base text-[#F0EBE1] font-normal sm:font-light leading-relaxed max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)] animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
                 {active.description}
               </p>
@@ -253,13 +257,13 @@ export const HeroSection: React.FC = () => {
               {/* CTA Buttons */}
               <div
                 key={`cta-${currentSlide}`}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 animate-in fade-in slide-in-from-bottom-4 duration-500"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
                 {/* Primary CTA */}
                 <a
                   href={active.primaryHref}
                   onClick={(e) => scrollToAnchor(e, active.primaryHref)}
-                  className="bg-[#A8875B] hover:bg-[#8E6F45] text-white py-3 sm:py-3.5 px-6 sm:px-7 rounded-full text-xs font-semibold uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-luxury transition-all duration-300 hover:scale-105 active:scale-95 group"
+                  className="w-full sm:w-auto bg-[#A8875B] hover:bg-[#8E6F45] text-white py-3.5 px-6 sm:px-7 rounded-full text-xs font-semibold uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 group"
                 >
                   <span>{active.primaryCta}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -268,7 +272,7 @@ export const HeroSection: React.FC = () => {
                 {/* Secondary CTA */}
                 <button
                   onClick={() => setIsBookingOpen(true)}
-                  className="bg-white/10 hover:bg-white/20 text-[#EDE7DC] hover:text-white border border-[#EDE7DC]/30 py-3 sm:py-3.5 px-6 sm:px-7 rounded-full text-xs font-semibold uppercase tracking-widest flex items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 active:scale-95"
+                  className="w-full sm:w-auto bg-white/15 hover:bg-white/25 text-white border border-white/40 py-3.5 px-6 sm:px-7 rounded-full text-xs font-semibold uppercase tracking-widest flex items-center justify-center gap-2 backdrop-blur-md transition-all duration-300 active:scale-95 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                 >
                   <span>{active.secondaryCta}</span>
                 </button>
@@ -277,12 +281,12 @@ export const HeroSection: React.FC = () => {
               {/* Trust Badges */}
               <div
                 key={`badges-${currentSlide}`}
-                className="pt-3 sm:pt-4 border-t border-white/15 flex flex-wrap items-center gap-3.5 sm:gap-6 text-[10px] sm:text-xs text-[#EDE7DC]/80 animate-in fade-in duration-700"
+                className="pt-3 sm:pt-4 border-t border-white/20 flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6 text-[11px] sm:text-xs text-[#F2ECE3] font-medium animate-in fade-in duration-700"
               >
                 {active.badges.map((badge, idx) => (
                   <div key={idx} className="flex items-center gap-1.5 sm:gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#A8875B]" />
-                    <span className="font-medium">{badge}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C5A26B] shrink-0 shadow-xs" />
+                    <span className="tracking-wide">{badge}</span>
                   </div>
                 ))}
               </div>
@@ -290,7 +294,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Slider Controls: Unified Horizontal Luxury Toolbar (Inside the Card) */}
-          <div className="relative z-20 px-6 sm:px-10 lg:px-14 xl:px-16 pb-5 sm:pb-6 flex items-center justify-between">
+          <div className="relative z-20 px-5 xs:px-6 sm:px-10 lg:px-14 xl:px-16 pb-4 sm:pb-6 flex items-center justify-between">
             {/* Subtle Scroll Down Indicator */}
             <div className="hidden sm:flex items-center gap-2 text-white/50 hover:text-white transition-colors cursor-pointer">
               <a
@@ -314,21 +318,21 @@ export const HeroSection: React.FC = () => {
                 <button
                   onClick={prevSlide}
                   aria-label="Previous slide"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/40 hover:bg-[#A8875B] text-white/80 hover:text-white border border-white/20 hover:border-[#A8875B] backdrop-blur-md flex items-center justify-center transition-all duration-300 active:scale-95 shadow-md"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/50 hover:bg-[#A8875B] text-white/90 hover:text-white border border-white/25 hover:border-[#A8875B] backdrop-blur-md flex items-center justify-center transition-all duration-300 active:scale-95 shadow-md"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={nextSlide}
                   aria-label="Next slide"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/40 hover:bg-[#A8875B] text-white/80 hover:text-white border border-white/20 hover:border-[#A8875B] backdrop-blur-md flex items-center justify-center transition-all duration-300 active:scale-95 shadow-md"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/50 hover:bg-[#A8875B] text-white/90 hover:text-white border border-white/25 hover:border-[#A8875B] backdrop-blur-md flex items-center justify-center transition-all duration-300 active:scale-95 shadow-md"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Slide Indicators with Progress Line */}
-              <div className="flex items-center gap-1 sm:gap-1.5 bg-black/45 backdrop-blur-md border border-white/15 p-1 rounded-full shadow-lg">
+              <div className="flex items-center gap-1 sm:gap-1.5 bg-black/55 backdrop-blur-md border border-white/20 p-1 rounded-full shadow-lg">
                 {slides.map((slide, index) => {
                   const isCurrent = index === currentSlide;
                   return (
@@ -339,7 +343,7 @@ export const HeroSection: React.FC = () => {
                       className={`relative px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold transition-all duration-300 flex items-center gap-1.5 overflow-hidden ${
                         isCurrent
                           ? 'text-white bg-[#A8875B]'
-                          : 'text-[#D8CBB9]/70 hover:text-[#EDE7DC] hover:bg-white/10'
+                          : 'text-white/70 hover:text-white hover:bg-white/10'
                       }`}
                     >
                       <span>0{index + 1}</span>
