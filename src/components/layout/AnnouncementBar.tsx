@@ -19,7 +19,7 @@ export const AnnouncementBar: React.FC = () => {
         </div>
 
         {/* Center Highlights: Clean, single line, no wrapping */}
-        <div className="flex-1 flex items-center justify-center gap-3 sm:gap-4 text-center font-medium tracking-wide whitespace-nowrap overflow-hidden text-[11px]">
+        <div className="flex-1 flex items-center justify-center gap-2 sm:gap-4 text-center font-medium tracking-wide whitespace-nowrap overflow-hidden text-[10px] sm:text-[11px]">
           <span className="flex items-center gap-1.5 shrink-0">
             <Sparkles className="w-3 h-3 text-[#A8875B]" />
             <span>Bespoke Furniture</span>
@@ -28,8 +28,8 @@ export const AnnouncementBar: React.FC = () => {
           <span className="shrink-0">Made to Order</span>
           <span className="text-[#5A5A55] hidden sm:inline">•</span>
           <span className="hidden sm:inline shrink-0">Premium Craftsmanship</span>
-          <span className="text-[#5A5A55]">•</span>
-          <span className="text-[#A8875B] font-semibold shrink-0">Hyderabad Free White-Glove Setup</span>
+          <span className="text-[#5A5A55] hidden lg:inline">•</span>
+          <span className="text-[#A8875B] font-semibold hidden lg:inline shrink-0">Hyderabad Free White-Glove Setup</span>
         </div>
 
         {/* Right Phone Call */}
