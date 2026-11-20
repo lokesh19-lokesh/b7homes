@@ -3,6 +3,7 @@ import { ShopProvider, useShop } from './context/ShopContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/sections/HeroSection';
+import { ShopByCategorySection } from './components/sections/ShopByCategorySection';
 import { CategorySection } from './components/sections/CategorySection';
 import { FeaturedProducts } from './components/sections/FeaturedProducts';
 import { EditorialBanner } from './components/sections/EditorialBanner';
@@ -38,7 +39,7 @@ const MainContent: React.FC = () => {
   }, [isBookingOpen, setIsBookingOpen]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F5EF] text-[#252523] font-sans antialiased selection:bg-[#A8875B] selection:text-white overflow-x-hidden w-full">
+    <div className="min-h-screen flex flex-col bg-[#F8F5EF] text-[#252523] font-sans antialiased selection:bg-[#A8875B] selection:text-white overflow-x-clip w-full">
       {/* Header & Sticky Navigation */}
       <Header />
 
@@ -47,7 +48,10 @@ const MainContent: React.FC = () => {
         {/* 1. Hero Section */}
         <HeroSection />
 
-        {/* 2. Shop By Category */}
+        {/* 1.1 Quick Browse Shop by Category (Reference Layout) */}
+        <ShopByCategorySection />
+
+        {/* 2. Shop By Category / Collections */}
         <CategorySection />
 
         {/* 3. Bestselling Furniture / Customer Favourites */}

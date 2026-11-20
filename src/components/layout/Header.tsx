@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
   return (
     <>
       <header
-        className="sticky top-0 z-40 w-full transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300"
         onMouseLeave={() => setActiveMegaCategory(null)}
       >
         {/* Announcement Bar */}
@@ -243,6 +243,9 @@ export const Header: React.FC = () => {
           />
         )}
       </header>
+
+      {/* Header Spacer to preserve natural flow below fixed header */}
+      <div className="h-[102px] sm:h-[114px] md:h-[122px] xl:h-[132px] shrink-0" aria-hidden="true" />
 
       {/* Mobile Drawer */}
       <MobileDrawer
